@@ -1,3 +1,4 @@
+
 class Dimensions {
   String? height;
   String? width;
@@ -11,5 +12,9 @@ class Dimensions {
     thickness: json['thickness'] as String?,
   );
 
-
+  Map<String, dynamic> toJson() => {
+    'height': height,
+    'width': width,
+    'thickness': thickness,
+  };
 }

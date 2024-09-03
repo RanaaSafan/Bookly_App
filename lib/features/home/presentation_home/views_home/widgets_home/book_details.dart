@@ -7,7 +7,7 @@ import '../../../../../core/network/service_locator.dart';
 import '../../../../../core/styles.dart';
 import '../../../data/models/books.dart';
 import '../../../data/repo/home_repo_impl.dart';
-import '../../manager/All_Books/AllBooks_cubit.dart';
+ import '../../manager/All_Books/AllBooks_cubit.dart';
 import '../../manager/All_Books/AllBooks_state.dart';
 import 'AppBar.dart';
 

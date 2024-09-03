@@ -13,6 +13,7 @@ class HomeRepoImpl implements HomeRepo{
   @override
   Future<Either<Failers,List<Books>>> FetchAllBooks() async{
     try {
+
       var data = await apiservice.getBooks( endpoint: 'volumes?Filtering=free-ebooks&q=all');
       List<Books> books = [];
 
@@ -41,5 +42,22 @@ class HomeRepoImpl implements HomeRepo{
     }
 
   }
+
+  @override
+  Future<Either<Failers, List<Books>>> FetchCategoryBooks(String category) async {
+    try {
+      var data = await apiservice.getBooks( endpoint: 'volumes?Filtering=free-ebooks&q=$category');
+      List<Books> books = [];
+
+      for (var i in data["items"]) {
+        books.add(Books.fromJson(i));
+      }
+      return right(books);
+    } catch (e) {
+      return left(ErrorService(error: e.toString()));
+    }
+
+  }
+
 
 }

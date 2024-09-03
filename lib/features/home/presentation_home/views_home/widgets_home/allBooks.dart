@@ -16,7 +16,7 @@ class AllBooks extends StatelessWidget {
     return BlocBuilder<AllbooksCubit, AllBooksState>( // Wrap with BlocBuilder
       builder: (context, state) {
         if (state is AllBooksSuccess) {
-          String? thumbnailUrl = book.volumeInfo?.imageLinks?.thumbnail!;
+          String? thumbnailUrl = book.volumeInfo?.imageLinks?.thumbnail;
 
           return Padding(
             padding: const EdgeInsets.all(8.0),
@@ -25,7 +25,8 @@ class AllBooks extends StatelessWidget {
                 // Inside ListViewBooks (or wherever you navigate to BookDetails)
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => BookDetails(book: book)),
+                  MaterialPageRoute(
+                      builder: (context) => BookDetails(book: book)),
                 );
               },
               child: Container(
@@ -52,22 +53,22 @@ class AllBooks extends StatelessWidget {
 
   Widget _buildBookImage(String? thumbnailUrl) {
     if (thumbnailUrl != null && thumbnailUrl.isNotEmpty) {
-      if (thumbnailUrl.startsWith('http')) {
-        // Handle network images
-        return Image.network(
-          thumbnailUrl,
-          fit: BoxFit.fill,
-          errorBuilder: (context, error, stackTrace) {
-            return Image.asset('assets/images/book1.jpeg', fit: BoxFit.fill);
-          },
-        );
-      } else if (thumbnailUrl.startsWith('assets')) {
-        // Handle local assets
-        return Image.asset(thumbnailUrl, fit: BoxFit.fill);
-      }
+      // Handle network images (assuming thumbnailUrl is a valid URL)
+      return Image.network(
+        thumbnailUrl,
+        fit: BoxFit.cover, // Ensure image covers the container
+        // errorBuilder: (context, error, stackTrace) {
+        //   return Image.asset('assets/images/book1.jpeg', fit: BoxFit.cover);
+        // },
+        loadingBuilder: (context, child, loadingProgress) {
+          if (loadingProgress == null) return child;
+          return Center(child: CircularProgressIndicator());
+        },
+      );
     }
 
     // Fallback to a default image asset if thumbnailUrl is null or unrecognized format
-    return Image.asset('assets/images/book1.jpeg', fit: BoxFit.fill);
+    return Image.asset('assets/images/book1.jpeg', fit: BoxFit.cover);
   }
+
 }

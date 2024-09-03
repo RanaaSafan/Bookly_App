@@ -7,5 +7,7 @@ class Pdf {
     isAvailable: json['isAvailable'] as bool?,
   );
 
-
+  Map<String, dynamic> toJson() => {
+    'isAvailable': isAvailable,
+  };
 }

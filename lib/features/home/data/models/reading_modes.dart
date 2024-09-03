@@ -1,13 +1,17 @@
+
 class ReadingModes {
   bool? text;
   bool? image;
 
   ReadingModes({this.text, this.image});
 
-  ReadingModes.fromJson(Map<String, dynamic> json) {
-    text = json['text'];
-    image = json['image'];
-  }
+  factory ReadingModes.fromJson(Map<String, dynamic> json) => ReadingModes(
+    text: json['text'] as bool?,
+    image: json['image'] as bool?,
+  );
 
-
+  Map<String, dynamic> toJson() => {
+    'text': text,
+    'image': image,
+  };
 }

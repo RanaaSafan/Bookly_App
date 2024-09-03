@@ -6,8 +6,6 @@ import 'package:booky_app/features/home/presentation_home/views_home/widgets_hom
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../manager/All_Books/AllBooks_cubit.dart';
-import '../../manager/All_Books/AllBooks_state.dart';
 
 class NewestBooks extends StatefulWidget {
   final Books book;

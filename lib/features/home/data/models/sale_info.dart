@@ -5,10 +5,15 @@ class SaleInfo {
 
   SaleInfo({this.country, this.saleability, this.isEbook});
 
-  SaleInfo.fromJson(Map<String, dynamic> json) {
-    country = json['country'];
-    saleability = json['saleability'];
-    isEbook = json['isEbook'];
-  }
+  factory SaleInfo.fromJson(Map<String, dynamic> json) => SaleInfo(
+    country: json['country'] as String?,
+    saleability: json['saleability'] as String?,
+    isEbook: json['isEbook'] as bool?,
+  );
 
+  Map<String, dynamic> toJson() => {
+    'country': country,
+    'saleability': saleability,
+    'isEbook': isEbook,
+  };
 }
