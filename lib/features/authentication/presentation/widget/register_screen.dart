@@ -36,35 +36,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
       String result = await apiService.UserLogin(userName: userName, userPassword: userPassword);
 
-      if (result == "login Success") {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Row(
-              children: [
-                Icon(Icons.check_circle, color: Colors.green),
-                SizedBox(width: 10),
-                Text(result),
-              ],
-            ),
-            backgroundColor: Colors.green.shade100,
-          ),
-        );
-      } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Row(
-              children: [
-                Icon(Icons.error, color: Colors.red),
-                SizedBox(width: 10),
-                Text(result),
-              ],
-            ),
-            backgroundColor: Colors.red.shade100,
-          ),
-        );
+
       }
     }
-  }
+
 
   @override
   Widget build(BuildContext context) {
