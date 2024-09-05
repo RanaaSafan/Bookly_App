@@ -46,7 +46,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
             icon: const Icon(Icons.stacked_line_chart),
             color: Colors.orange,
             onPressed: () {
-              // Add functionality for forward button
+
             },
           ),
         ],

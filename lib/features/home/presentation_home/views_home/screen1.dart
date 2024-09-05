@@ -5,6 +5,8 @@ import 'package:booky_app/features/home/presentation_home/manager/All_Books/AllB
 import 'package:booky_app/features/home/presentation_home/manager/best_seller/BestSeller_cubit.dart';
 import 'package:booky_app/features/home/presentation_home/views_home/widgets_home/NewestBooks_view.dart';
 import 'package:booky_app/features/home/presentation_home/views_home/widgets_home/list_viewBooks.dart';
+import 'package:booky_app/features/home/presentation_home/views_home/widgets_home/profile.dart';
+import 'package:booky_app/features/home/presentation_home/views_home/widgets_home/setting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,6 +33,58 @@ class _Screen1State extends State<Screen1> {
       Scaffold(
         backgroundColor: Colors.black,
         appBar: APPBAR(),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.pink,
+                ),
+                child: Text(
+                  'Menu',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.home),
+                title: Text('Home'),
+                onTap: () {
+                  Navigator.pop(context);
+                  // Handle navigation to home screen here
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.person_rounded),
+                title: Text('profile'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProfileScreen(),
+                    ),
+                  );
+                  // Handle navigation to books screen
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SettingsScreen(),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(

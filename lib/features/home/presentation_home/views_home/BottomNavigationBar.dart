@@ -3,6 +3,7 @@ import 'package:booky_app/features/home/presentation_home/views_home/screen1.dar
 import 'package:flutter/material.dart';
 
 import 'category_books_screen.dart';
+import 'favorite_screen.dart';
 
 
 
@@ -20,7 +21,7 @@ class _BottomnavigationbarState extends State<Bottomnavigationbar> {
     const Screen1(), // Assuming HomeView contains your Home screen
     const CategoryScreen(), // Pass categories here or use a placeholder
  //   const Cart_view(), // Implement this screen
-   // const FavoritesScreen(), // Implement this screen
+    const FavoritesScreen(), // Implement this screen
   ];
 
   void _onItemTapped(int index) {
@@ -50,16 +51,16 @@ class _BottomnavigationbarState extends State<Bottomnavigationbar> {
           //   icon: Icon(Icons.shopping_cart),
           //   label: 'Cart',
           // ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.favorite),
-          //   label: 'Favorite',
-          // ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorite',
+          ),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         selectedItemColor: Colors.orange,
         unselectedItemColor: Colors.grey,
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blueGrey,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
       ),

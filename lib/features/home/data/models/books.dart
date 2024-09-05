@@ -10,7 +10,7 @@ class Books {
   VolumeInfo? volumeInfo;
   SaleInfo? saleInfo;
   AccessInfo? accessInfo;
-
+  List<String>? categories;
   Books({
     this.kind,
     this.id,
@@ -19,6 +19,7 @@ class Books {
     this.volumeInfo,
     this.saleInfo,
     this.accessInfo,
+    this.categories,
   });
 
   factory Books.fromJson(Map<String, dynamic> json) => Books(
@@ -35,6 +36,10 @@ class Books {
     accessInfo: json['accessInfo'] == null
         ? null
         : AccessInfo.fromJson(json['accessInfo'] as Map<String, dynamic>),
+    categories: (json['volumeInfo']?['categories'] as List?)
+        ?.map((e) => e.toString())
+        .toList(),
+
   );
 
 
