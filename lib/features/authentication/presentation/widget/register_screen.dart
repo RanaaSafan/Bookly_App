@@ -61,11 +61,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 60),
+                  const SizedBox(height: 60),
                   // Icon for Register Screen
-                  Icon(Icons.person_add_alt_1_rounded, size: 100, color: Colors.white),
-                  SizedBox(height: 20),
-                  Text(
+                  const Icon(Icons.person_add_alt_1_rounded, size: 100, color: Colors.white),
+                  const SizedBox(height: 20),
+                  const Text(
                     "Create Account",
                     style: TextStyle(
                       color: Colors.white,
@@ -73,7 +73,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
                   // Email TextFormField
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
@@ -86,17 +86,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     },
                     decoration: InputDecoration(
                       labelText: "Email",
-                      labelStyle: TextStyle(color: Colors.white70),
-                      prefixIcon: Icon(Icons.email, color: Colors.white),
+                      labelStyle: const TextStyle(color: Colors.white70),
+                      prefixIcon: const Icon(Icons.email, color: Colors.white),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.1),
                     ),
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Password TextFormField
                   TextFormField(
                     keyboardType: TextInputType.visiblePassword,
@@ -110,8 +110,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     },
                     decoration: InputDecoration(
                       labelText: "Password",
-                      labelStyle: TextStyle(color: Colors.white70),
-                      prefixIcon: Icon(Icons.lock, color: Colors.white),
+                      labelStyle: const TextStyle(color: Colors.white70),
+                      prefixIcon: const Icon(Icons.lock, color: Colors.white),
                       suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
@@ -129,32 +129,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.1),
                     ),
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   // Register Button
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [Colors.deepPurple, Colors.purpleAccent],
                       ),
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: MaterialButton(
                       onPressed: registerUser,
-                      child: Text(
+                      child: const Text(
                         "Register",
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Already have an account? Text and Login Button
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Already have an account?",
                         style: TextStyle(color: Colors.white70, fontSize: 16),
                       ),
@@ -162,17 +162,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => LoginScreen()),
+                            MaterialPageRoute(builder: (context) => const LoginScreen()),
                           );
                         },
-                        child: Text(
+                        child: const Text(
                           "Login",
                           style: TextStyle(color: Colors.purpleAccent, fontSize: 16),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
                 ],
               ),
             ),

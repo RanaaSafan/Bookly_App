@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../data/models/category.dart';
+import '../Category_Screen_Grid.dart';
+import '../category_books_screen.dart';
 
 class CategoryCard extends StatelessWidget {
   final Category category;
@@ -11,13 +13,13 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => CategoryScreen(),
-        //
-        //   ),
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CategoryScreenGrid(category: category,),
+
+          ),
+        );
 
       },
       child: Padding(

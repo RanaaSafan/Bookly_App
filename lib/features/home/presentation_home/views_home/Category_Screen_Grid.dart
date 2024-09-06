@@ -63,14 +63,14 @@ class _CategoryScreenGridState extends State<CategoryScreenGrid> {
 
   Widget _buildBody(BooksCategoryState state) {
     if (state is BooksCategorySuccess) {
-      if (state.books == null || state.books.isEmpty) {
-        return Center(child: Text('No books available'));
+      if (state.books.isEmpty) {
+        return const Center(child: Text('No books available'));
       }
       return BooksGridView(books: state.books);
     } else if (state is BooksCategoryFailure) {
       return Center(child: Text("Error: ${state.error}"));
     } else {
-      return Center(child: CircularProgressIndicator());
+      return const Center(child: CircularProgressIndicator());
     }
   }
 }

@@ -23,7 +23,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFFffffff),
         ),
         child: PageView.builder(
@@ -38,23 +38,23 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 Align(
                   alignment: Alignment.topRight,
                   child: Padding(
                     padding: const EdgeInsets.only(right: 20.0),
                     child: TextButton(
-                      child: Text(
+                      child: const Text(
                         "Skip",
                         style: TextStyle(color: Colors.deepPurple, fontSize: 16),
                       ),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Bottomnavigationbar()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const Bottomnavigationbar()));
                       },
                     ),
                   ),
                 ),
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Image.asset(
@@ -64,12 +64,12 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Text(
                     contents[i].title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
@@ -77,19 +77,19 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Text(
                     contents[i].description,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: List.generate(
@@ -97,7 +97,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                     (index) => Container(
                       height: currentIndex == index ? 12 : 8,
                       width: currentIndex == index ? 12 : 8,
-                      margin: EdgeInsets.symmetric(horizontal: 4),
+                      margin: const EdgeInsets.symmetric(horizontal: 4),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: index == currentIndex
@@ -107,7 +107,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                     ),
                   ),
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Container(
@@ -127,7 +127,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                     child: GestureDetector(
                       onTap: () {
                         if (currentIndex == contents.length - 1) {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Bottomnavigationbar()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const Bottomnavigationbar()));
                         } else {
                           controller.nextPage(
                             duration: const Duration(milliseconds: 300),
@@ -138,7 +138,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                           });
                         }
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.arrow_forward,
                         color: Colors.white,
                         size: 32,
@@ -146,7 +146,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
               ],
             );
           },

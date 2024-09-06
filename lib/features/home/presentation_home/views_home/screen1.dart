@@ -32,12 +32,12 @@ class _Screen1State extends State<Screen1> {
       child:
       Scaffold(
         backgroundColor: Colors.black,
-        appBar: APPBAR(),
+        appBar: const APPBAR(),
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
-              DrawerHeader(
+              const DrawerHeader(
                 decoration: BoxDecoration(
                   color: Colors.pink,
                 ),
@@ -50,34 +50,34 @@ class _Screen1State extends State<Screen1> {
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.home),
-                title: Text('Home'),
+                leading: const Icon(Icons.home),
+                title: const Text('Home'),
                 onTap: () {
                   Navigator.pop(context);
                   // Handle navigation to home screen here
                 },
               ),
               ListTile(
-                leading: Icon(Icons.person_rounded),
-                title: Text('profile'),
+                leading: const Icon(Icons.person_rounded),
+                title: const Text('profile'),
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProfileScreen(),
+                      builder: (context) => const ProfileScreen(),
                     ),
                   );
                   // Handle navigation to books screen
                 },
               ),
               ListTile(
-                leading: Icon(Icons.settings),
-                title: Text('Settings'),
+                leading: const Icon(Icons.settings),
+                title: const Text('Settings'),
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SettingsScreen(),
+                      builder: (context) => const SettingsScreen(),
                     ),
                   );
                 },
@@ -86,14 +86,14 @@ class _Screen1State extends State<Screen1> {
           ),
         ),
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [Colors.red, Colors.pinkAccent, Colors.pink],
             ),
           ),
-          child: CustomScrollView(
+          child: const CustomScrollView(
             slivers: [
               SliverToBoxAdapter(child: ListViewBooks()),
               SliverToBoxAdapter(child: SizedBox(height: 20)),

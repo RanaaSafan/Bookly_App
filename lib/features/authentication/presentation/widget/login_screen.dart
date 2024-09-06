@@ -42,8 +42,8 @@ class _LoginScreenState extends State<LoginScreen> {
           SnackBar(
             content: Row(
               children: [
-                Icon(Icons.check_circle, color: Colors.green),
-                SizedBox(width: 10),
+                const Icon(Icons.check_circle, color: Colors.green),
+                const SizedBox(width: 10),
                 Text(result),
               ],
             ),
@@ -52,15 +52,15 @@ class _LoginScreenState extends State<LoginScreen> {
         );
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => OnboardingScreen()), // Replace HomePage() with your actual home page widget
+          MaterialPageRoute(builder: (context) => const OnboardingScreen()), // Replace HomePage() with your actual home page widget
         );
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Row(
               children: [
-                Icon(Icons.error, color: Colors.red),
-                SizedBox(width: 10),
+                const Icon(Icons.error, color: Colors.red),
+                const SizedBox(width: 10),
                 Text(result),
               ],
             ),
@@ -91,9 +91,9 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 80),
+                  const SizedBox(height: 80),
                   // Welcome Text
-                  Text(
+                  const Text(
                     "Welcome Back!",
                     style: TextStyle(
                       color: Colors.white,
@@ -101,15 +101,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Text(
+                  const SizedBox(height: 10),
+                  const Text(
                     "Please login to your account",
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 18,
                     ),
                   ),
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
                   // Email TextField
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
@@ -123,17 +123,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     decoration: InputDecoration(
                       labelText: "Email",
-                      labelStyle: TextStyle(color: Colors.white),
-                      prefixIcon: Icon(Icons.email, color: Colors.white),
+                      labelStyle: const TextStyle(color: Colors.white),
+                      prefixIcon: const Icon(Icons.email, color: Colors.white),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.1),
                     ),
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Password TextField
                   TextFormField(
                     keyboardType: TextInputType.visiblePassword,
@@ -147,8 +147,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     decoration: InputDecoration(
                       labelText: "Password",
-                      labelStyle: TextStyle(color: Colors.white),
-                      prefixIcon: Icon(Icons.lock, color: Colors.white),
+                      labelStyle: const TextStyle(color: Colors.white),
+                      prefixIcon: const Icon(Icons.lock, color: Colors.white),
                       suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
@@ -166,32 +166,32 @@ class _LoginScreenState extends State<LoginScreen> {
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.1),
                     ),
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   // Login Button
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [Colors.deepPurple, Colors.purpleAccent],
                       ),
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: MaterialButton(
                       onPressed: loginUser,
-                      child: Text(
+                      child: const Text(
                         "Login",
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   // Registration Option
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         "Don't have an account? ",
                         style: TextStyle(color: Colors.white70),
                       ),
@@ -199,10 +199,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => RegisterScreen()),
+                            MaterialPageRoute(builder: (context) => const RegisterScreen()),
                           );
                         },
-                        child: Text(
+                        child: const Text(
                           "Register",
                           style: TextStyle(color: Colors.purpleAccent),
                         ),

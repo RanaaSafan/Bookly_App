@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:booky_app/features/authentication/presentation/widget/login_screen.dart';
-import 'package:booky_app/features/home/presentation_home/views_home/screen1.dart';
-import 'package:booky_app/features/splash/presentation_splash/views/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/styles.dart';

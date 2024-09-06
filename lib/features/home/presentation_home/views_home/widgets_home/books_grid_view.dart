@@ -12,7 +12,7 @@ class BooksGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (books.isEmpty) {
-      return Center(child: Text('No products available'));
+      return const Center(child: Text('No products available'));
     }
 
     return Padding(
