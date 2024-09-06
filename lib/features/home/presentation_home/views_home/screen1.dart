@@ -30,16 +30,16 @@ class _Screen1State extends State<Screen1> {
       child:
       Scaffold(
         backgroundColor: Colors.black,
-        appBar: APPBAR(),
+        appBar: const APPBAR(),
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [Colors.red, Colors.pinkAccent, Colors.pink],
             ),
           ),
-          child: CustomScrollView(
+          child: const CustomScrollView(
             slivers: [
               SliverToBoxAdapter(child: ListViewBooks()),
               SliverToBoxAdapter(child: SizedBox(height: 20)),

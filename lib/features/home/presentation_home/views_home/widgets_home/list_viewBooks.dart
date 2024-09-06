@@ -37,9 +37,9 @@ class _ListViewBooksState extends State<ListViewBooks> {
               ),
             );
           } else if (state is AllBooksFailure) {
-            return Text("error ");
+            return const Text("error ");
           } else {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
         }
     );

@@ -80,7 +80,7 @@ class _NewestBooksState extends State<NewestBooks> {
                           widget.book.volumeInfo?.title ?? '',
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.black,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -91,13 +91,13 @@ class _NewestBooksState extends State<NewestBooks> {
                           widget.book.volumeInfo?.description ?? '',
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.black,
                             fontSize: 14,
                           ),
                         ),
                         const SizedBox(height: 8),
-                        Row(
+                        const Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -118,9 +118,9 @@ class _NewestBooksState extends State<NewestBooks> {
           ),
         );
       }else if (state is BestsellerFailure ) {
-        return Text("Error fetching books.");  // Improved error message
+        return const Text("Error fetching books.");  // Improved error message
       } else {
-        return Center(child: CircularProgressIndicator());
+        return const Center(child: CircularProgressIndicator());
       }
       }
     );

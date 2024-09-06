@@ -43,9 +43,9 @@ class AllBooks extends StatelessWidget {
             ),
           );
         } else if (state is AllBooksFailure) {
-          return Text("Error fetching books."); // Improved error message
+          return const Text("Error fetching books."); // Improved error message
         } else {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );
@@ -62,7 +62,7 @@ class AllBooks extends StatelessWidget {
         // },
         loadingBuilder: (context, child, loadingProgress) {
           if (loadingProgress == null) return child;
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         },
       );
     }

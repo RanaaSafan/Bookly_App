@@ -23,8 +23,8 @@ class _SplashWidgetState extends State<SplashWidget> with SingleTickerProviderSt
     // TODO: implement initState
     super.initState();
     animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 3));
-    slidingAnimation = Tween(begin: Offset(0, 7), end: Offset.zero).animate(
+        AnimationController(vsync: this, duration: const Duration(seconds: 3));
+    slidingAnimation = Tween(begin: const Offset(0, 7), end: Offset.zero).animate(
         animationController);
     animationController.forward();
 
@@ -47,10 +47,10 @@ class _SplashWidgetState extends State<SplashWidget> with SingleTickerProviderSt
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Center(child: Text("BOOKLY ",style: Stlyes.textStyle20,)),
+        const Center(child: Text("BOOKLY ",style: Stlyes.textStyle20,)),
         SlideTransition(
             position: slidingAnimation,
-            child: Center(child: Text("Hello in Bookly App",style: Stlyes.textStyle10,)))
+            child: const Center(child: Text("Hello in Bookly App",style: Stlyes.textStyle10,)))
       ],
     );
   }

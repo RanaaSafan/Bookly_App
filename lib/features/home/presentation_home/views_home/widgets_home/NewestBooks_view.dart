@@ -6,8 +6,6 @@ import 'package:booky_app/features/home/presentation_home/views_home/widgets_hom
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../manager/All_Books/AllBooks_cubit.dart';
-import '../../manager/All_Books/AllBooks_state.dart';
 
 class NewestBooksView extends StatefulWidget {
   const NewestBooksView({Key? key}) : super(key: key);
@@ -33,7 +31,7 @@ class _NewestBooksViewState extends State<NewestBooksView> {
           return SizedBox(
             child: ListView.builder(
               shrinkWrap: true,  // Added to avoid unbounded height errors
-              physics: NeverScrollableScrollPhysics(),  // Replaced SliverList with ListView.builder
+              physics: const NeverScrollableScrollPhysics(),  // Replaced SliverList with ListView.builder
               itemCount: state.books.length,
               itemBuilder: (context, index) {
                 return NewestBooks(book: state.books[index]);
@@ -41,9 +39,9 @@ class _NewestBooksViewState extends State<NewestBooksView> {
             ),
           );
         } else if (state is BestsellerFailure) {
-          return Text("Error fetching books.");  // Improved error message
+          return const Text("Error fetching books.");  // Improved error message
         } else {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );

@@ -7,7 +7,7 @@ class APPBAR extends StatefulWidget implements PreferredSizeWidget {
   State<APPBAR> createState() => _APPBARState();
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
 class _APPBARState extends State<APPBAR> {
@@ -15,7 +15,7 @@ class _APPBARState extends State<APPBAR> {
   Widget build(BuildContext context) {
     return AppBar(
       flexibleSpace: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.blue, Colors.purple],
             begin: Alignment.topLeft,
@@ -23,11 +23,11 @@ class _APPBARState extends State<APPBAR> {
           ),
         ),
       ),
-      title: Row(
+      title: const Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Icon(Icons.book, color: Colors.white),
-          const SizedBox(width: 8),
+          SizedBox(width: 8),
           Text(
             'Booky ',
             style: TextStyle(
@@ -41,13 +41,13 @@ class _APPBARState extends State<APPBAR> {
       centerTitle: false,
       actions: [
         IconButton(
-          icon: Icon(Icons.search, color: Colors.white),
+          icon: const Icon(Icons.search, color: Colors.white),
           onPressed: () {
             // Add your search action here
           },
         ),
         IconButton(
-          icon: Icon(Icons.notifications, color: Colors.white),
+          icon: const Icon(Icons.notifications, color: Colors.white),
           onPressed: () {
             // Add your notifications action here
           },

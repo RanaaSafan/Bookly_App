@@ -1,14 +1,12 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:booky_app/features/home/presentation_home/views_home/widgets_home/list_viewBooks.dart';
-import 'package:get_it/get_it.dart'; // Import get_it package
+// Import get_it package
 import '../../../../../core/network/service_locator.dart';
 import '../../../../../core/styles.dart';
 import '../../../data/models/books.dart';
 import '../../../data/repo/home_repo_impl.dart';
  import '../../manager/All_Books/AllBooks_cubit.dart';
-import '../../manager/All_Books/AllBooks_state.dart';
 import 'AppBar.dart';
 
 class BookDetails extends StatefulWidget {
@@ -24,7 +22,7 @@ class _BookDetailsState extends State<BookDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: APPBAR(),
+      appBar: const APPBAR(),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -85,13 +83,13 @@ class _BookDetailsState extends State<BookDetails> {
                 ),
               ),
               const SizedBox(height: 8),
-              Center(
+              const Center(
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(
+                    Icon(
                         Icons.star_rounded, size: 22, color: Colors.yellow),
-                    const SizedBox(width: 4),
+                    SizedBox(width: 4),
                     Text("4.89", style: Stlyes.textStyle16),
                   ],
                 ),
@@ -110,13 +108,13 @@ class _BookDetailsState extends State<BookDetails> {
                         bottomLeft: Radius.circular(20),
                       ),
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text("8", style: Stlyes.textStyle16),
-                          const SizedBox(width: 4),
-                          const Icon(Icons.attach_money_rounded, size: 22,
+                          SizedBox(width: 4),
+                          Icon(Icons.attach_money_rounded, size: 22,
                               color: Colors.black),
                         ],
                       ),
