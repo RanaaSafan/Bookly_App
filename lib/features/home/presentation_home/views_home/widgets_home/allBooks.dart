@@ -57,9 +57,9 @@ class AllBooks extends StatelessWidget {
       return Image.network(
         thumbnailUrl,
         fit: BoxFit.cover, // Ensure image covers the container
-        // errorBuilder: (context, error, stackTrace) {
-        //   return Image.asset('assets/images/book1.jpeg', fit: BoxFit.cover);
-        // },
+        errorBuilder: (context, error, stackTrace) {
+          return Image.asset('assets/images/book1.jpeg', fit: BoxFit.cover);
+        },
         loadingBuilder: (context, child, loadingProgress) {
           if (loadingProgress == null) return child;
           return const Center(child: CircularProgressIndicator());

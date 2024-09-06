@@ -39,7 +39,10 @@ dependencies:
   dio:
   bloc:
   flutter_bloc:
-  get_it: 
+  get_it:
+  shared_preferences:
+  firebase_core: ^3.4.0
+  firebase_auth: ^5.2.0
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../../data/models/category.dart';
-
+import '../category_screen_grid.dart';
 
 class CategoryCard extends StatelessWidget {
   final Category category;
@@ -12,19 +11,17 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => CategoryScreen(),
-        //
-        //   ),
-        // );
-
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => CategoryScreenGrid(category: category),
+          ),
+        );
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
         child: Card(
-          elevation: 8.0, // Slightly elevated for a modern look
+          elevation: 8.0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20.0),
           ),
@@ -33,7 +30,7 @@ class CategoryCard extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(20.0),
                 child: Image.asset(
-                  category.imageUrl, // Ensure this path is correct
+                  category.imageUrl,
                   fit: BoxFit.cover,
                   height: 180,
                   width: double.infinity,
@@ -46,11 +43,11 @@ class CategoryCard extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Colors.black.withOpacity(0.2), // More transparent for better visibility
+                        Colors.black.withOpacity(0.2),
                         Colors.black.withOpacity(0.6),
                       ],
                     ),
-                    borderRadius: BorderRadius.circular(20.0), // Match card border radius
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
               ),
