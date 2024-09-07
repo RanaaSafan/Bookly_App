@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../data/models/books.dart';
 import '../favorite_screen.dart';
+import 'book_details.dart';
 
 class CategoryForGridView extends StatefulWidget {
   final Books books;
@@ -32,12 +33,12 @@ class _CategoryForGridViewState extends State<CategoryForGridView> {
     return SizedBox(
       child: InkWell(
         onTap: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => DetailsScreen(product: widget.product),
-          //   ),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => BookDetails(book: widget.books,),
+            ),
+          );
         },
         child: Card(
           shape: RoundedRectangleBorder(
@@ -54,7 +55,7 @@ class _CategoryForGridViewState extends State<CategoryForGridView> {
                   ClipRRect(
                     borderRadius: const BorderRadius.vertical(top: Radius.circular(16.0)),
                     child: Image.network(
-                      widget.books.volumeInfo?.imageLinks?.smallThumbnail ?? 'https://via.placeholder.com/150',
+                      widget.books.volumeInfo?.imageLinks?.thumbnail ?? 'assets/images/book1.jpeg',
                       height: 180,
                       width: double.infinity,
                       fit: BoxFit.cover,

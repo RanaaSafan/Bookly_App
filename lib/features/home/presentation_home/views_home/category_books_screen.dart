@@ -14,7 +14,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
   // Define the list of categories here
   final List<Category> categories = [
     Category(name: 'Romantic', imageUrl: 'category image/5958669826849359164.jpg',),
-
+    Category(name: 'Health & Fitness', imageUrl: 'category image/5974518475214933883.jpg',),
     Category(name: 'Commedy', imageUrl: 'category image/5958669826849359165.jpg',),
 
     Category(name: 'Scary', imageUrl: 'category image/5958669826849359167.jpg',),
@@ -24,6 +24,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
     Category(name: 'Cooking', imageUrl: 'category image/5958669826849359220.jpg',),
 
     Category(name: 'Technology', imageUrl: 'category image/5958669826849359221.jpg',),
+   Category(name: 'Drama', imageUrl: 'category image/5974518475214933884.jpg',),
+    Category(name: 'medical', imageUrl: 'category image/5974518475214933885.jpg',),
+
 
 
   ];
@@ -37,14 +40,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
           "Categories",
           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
             fontWeight: FontWeight.w600,
-            color: Colors.orange,
+            color: Colors.teal[800],
           ),
         ),
         centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.stacked_line_chart),
-            color: Colors.orange,
+            color:Colors.teal[800],
             onPressed: () {
 
             },

@@ -26,7 +26,7 @@ class _NewestBooksState extends State<NewestBooks> {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: SizedBox(
-            height: 140,
+            height: 150,
             child: Container(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,15 +34,7 @@ class _NewestBooksState extends State<NewestBooks> {
                   InkWell(
                     onTap:(){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>BookDetails(book: widget.book,)));
-                   /*   Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => BlocProvider.value(
-                            value: BlocProvider.of<BestsellerCubit>(context),
-                            child: BookDetails(book: widget.book),
-                          ),
-                        ),
-                      );*/
+
                     },
                     child: Container(
                       child: ClipRRect(
@@ -101,10 +93,6 @@ class _NewestBooksState extends State<NewestBooks> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text("8",style: Stlyes.textStyle16,),
-                            Icon(Icons.attach_money_rounded,size: 22,color: Colors.black,),
-                            Text("      "),
-
                             Icon(Icons.star_rounded,size: 22,color: Colors.yellow,),
                             Text("4.89",style: Stlyes.textStyle16,),
                           ],

@@ -25,7 +25,7 @@ class _CategoryScreenGridState extends State<CategoryScreenGrid> {
     _booksCategoryCubit = BooksCategoryCubit(
       getIt.get<HomeRepoImpl>(),
       widget.category.name,
-      widget.category, // Pass the category object
+      widget.category,
     )..FetchCategoryBooks();
   }
 
@@ -42,14 +42,17 @@ class _CategoryScreenGridState extends State<CategoryScreenGrid> {
       child: BlocBuilder<BooksCategoryCubit, BooksCategoryState>(
         builder: (context, state) {
           return Scaffold(
+            backgroundColor: const Color(0xFFF5F5F5), // Light background color
             appBar: AppBar(
               backgroundColor: Colors.white,
-              elevation: 0,
+              elevation: 2,
+              shadowColor: Colors.grey.withOpacity(0.3),
               title: Text(
                 widget.category.name,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                   fontWeight: FontWeight.w600,
-                  color: Colors.orange,
+                  color: Colors.orangeAccent,
+                  letterSpacing: 1.2,
                 ),
               ),
               centerTitle: true,
@@ -64,11 +67,21 @@ class _CategoryScreenGridState extends State<CategoryScreenGrid> {
   Widget _buildBody(BooksCategoryState state) {
     if (state is BooksCategorySuccess) {
       if (state.books.isEmpty) {
-        return const Center(child: Text('No books available'));
+        return const Center(
+          child: Text(
+            'No books available',
+            style: TextStyle(fontSize: 18, color: Colors.grey),
+          ),
+        );
       }
       return BooksGridView(books: state.books);
     } else if (state is BooksCategoryFailure) {
-      return Center(child: Text("Error: ${state.error}"));
+      return Center(
+        child: Text(
+          "Error: ${state.error}",
+          style: const TextStyle(fontSize: 18, color: Colors.redAccent),
+        ),
+      );
     } else {
       return const Center(child: CircularProgressIndicator());
     }

@@ -4,6 +4,7 @@ import 'package:booky_app/features/authentication/presentation/widget/login_scre
 import 'package:flutter/material.dart';
 
 import '../../../../../core/styles.dart';
+import '../onboarding_screen.dart';
 
 class SplashWidget extends StatefulWidget {
   const SplashWidget({super.key});
@@ -31,7 +32,7 @@ class _SplashWidgetState extends State<SplashWidget> with SingleTickerProviderSt
 
 
 
-    Timer(const Duration(seconds: 5), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen())));
+    Timer(const Duration(seconds: 5), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const OnboardingScreen())));
   }
 
 @override

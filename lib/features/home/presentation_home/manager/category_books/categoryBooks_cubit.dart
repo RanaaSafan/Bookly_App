@@ -19,10 +19,8 @@ class BooksCategoryCubit extends Cubit<BooksCategoryState> {
       eitherBooks.fold(
             (failure) => emit(BooksCategoryFailure(error: failure.error)),
             (books) {
-          // Filter books based on the category object
-          final filteredBooks = books.where((book) => book.categories!
-              .contains(category.name)).toList();
-          emit(BooksCategorySuccess(books: filteredBooks));
+
+          emit(BooksCategorySuccess(books: books));
         },
       );
     } catch (e) {

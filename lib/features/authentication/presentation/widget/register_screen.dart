@@ -1,7 +1,9 @@
+import 'package:booky_app/features/home/presentation_home/views_home/BottomNavigationBar.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dio/dio.dart';
 import '../../../../core/api_service.dart';
+import '../../../home/presentation_home/views_home/widgets_home/profile.dart';
 import 'login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -13,32 +15,55 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   bool visible = true;
+  bool isLoading = false;
   var formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final ApiService apiService = ApiService(Dio());
 
-  @override
-  void initState() {
-    super.initState();
-    getToken();
-  }
-
-  Future<void> getToken() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? userToken = prefs.getString('userToken');
-  }
-
   Future<void> registerUser() async {
     if (formKey.currentState!.validate()) {
+      setState(() {
+        isLoading = true;
+      });
+
       String userName = emailController.text;
       String userPassword = passwordController.text;
 
       String result = await apiService.UserLogin(userName: userName, userPassword: userPassword);
 
+      setState(() {
+        isLoading = false;
+      });
 
+      if (result == "registration Success") {
+        final SharedPreferences prefs = await SharedPreferences.getInstance();
+        await prefs.setString('userName', userName);
+        await prefs.setString('userPassword', userPassword);
+
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => BottomNavigationBarWidget(),
+          ),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Row(
+              children: [
+                const Icon(Icons.error, color: Colors.red),
+                const SizedBox(width: 10),
+                Text(result),
+              ],
+            ),
+            backgroundColor: Colors.red.shade100,
+          ),
+        );
       }
     }
+  }
+
 
 
   @override

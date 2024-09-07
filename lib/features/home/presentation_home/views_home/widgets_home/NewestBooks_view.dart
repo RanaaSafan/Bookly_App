@@ -29,6 +29,7 @@ class _NewestBooksViewState extends State<NewestBooksView> {
       builder: (context, state) {
         if (state is BestsellerSuccess) {
           return SizedBox(
+
             child: ListView.builder(
               shrinkWrap: true,  // Added to avoid unbounded height errors
               physics: const NeverScrollableScrollPhysics(),  // Replaced SliverList with ListView.builder

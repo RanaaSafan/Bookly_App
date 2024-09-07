@@ -1,3 +1,4 @@
+import 'package:booky_app/features/authentication/presentation/widget/login_screen.dart';
 import 'package:flutter/material.dart';
 import '../../../../home/presentation_home/views_home/BottomNavigationBar.dart';
 import '../../../data_splash/onboarding_info.dart';
@@ -49,7 +50,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                         style: TextStyle(color: Colors.deepPurple, fontSize: 16),
                       ),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const Bottomnavigationbar()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const LoginScreen()));
                       },
                     ),
                   ),
@@ -127,7 +128,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                     child: GestureDetector(
                       onTap: () {
                         if (currentIndex == contents.length - 1) {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const Bottomnavigationbar()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>const LoginScreen()));
                         } else {
                           controller.nextPage(
                             duration: const Duration(milliseconds: 300),
